@@ -1,0 +1,15 @@
+{
+  "alias": {
+    "src": "./src"
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "start:db": "json-server -w db.json -p 4444",
+    "start:parcel": "parcel index.html",
+    "start": "concurrently --names 'json-server,parcel' 'npm run start:db --silent' 'npm run start:parcel --silent'"
+  }
+}
